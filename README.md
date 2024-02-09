@@ -6,6 +6,11 @@ Development purely made for upm. All files are under Packages->RemoteTool
 
 This package also includes a MainThreadDispatcher script. Sample project uses this to make sure remote config update events fires from the main thread.
 
+## Unity Version
+Developed with 2021.3.27f1, compatible with any 2021.3.x
+## Dependencies
+- Newtonsoft 3.2.0
+
 ## Features
 
 - **Generic Download and Parse Method:** Download and parse JSON data into the specified object type.
