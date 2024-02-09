@@ -14,7 +14,7 @@ namespace Samples.Bridge
         private void Awake() => Application.targetFrameRate = 60;
     }
     
-    public class ControllerHandler
+    public static class ControllerHandler
     {
         private static List<IController> _controllers = new List<IController>();
         private static Dictionary<IController, Type> _controllersDictionary = new Dictionary<IController, Type>();
