@@ -1,0 +1,16 @@
+{
+    "name": "madbox.remote.samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:243c0f5ebf76d48299ec574684e87a19"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
