@@ -11,7 +11,13 @@ namespace Samples.Bridge
     [DefaultExecutionOrder(-1)]
     public class MonoBridge : MonoBehaviour
     {
-        private void Awake() => Application.targetFrameRate = 60;
+        private void Awake()
+        {
+            Application.targetFrameRate = 60;
+#if !UNITY_EDITOR
+            Debug.unityLogger.logEnabled = false;
+#endif
+        }
     }
     
     public static class ControllerHandler
