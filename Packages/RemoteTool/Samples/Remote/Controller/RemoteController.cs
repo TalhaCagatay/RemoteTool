@@ -54,7 +54,7 @@ namespace Samples.Remote.Controller
         {
             MadboxSheet = await RemoteTool.DownloadAndParse(API_URL, _default);
             Debug.Log($"RemoteUpdated");
-            RemoteUpdated?.Invoke(RemoteTool.LATEST_DATA);
+            MainThreadDispatcher.AddMainThreadCallback(() => RemoteUpdated?.Invoke(RemoteTool.LATEST_DATA));
         }
 
         private void OnQuit()
