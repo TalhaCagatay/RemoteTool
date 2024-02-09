@@ -35,8 +35,11 @@ namespace Samples.Fog.Controller
 
         private static void UpdateFogSettings()
         {
-            RenderSettings.fog = RemoteController.MadboxSheet.FogConfig.First(c=>c.key.Equals("fogEnabled")).BoolValue();
-            RenderSettings.fogDensity = RemoteController.MadboxSheet.FogConfig.First(c => c.key.Equals("fogDensity")).FloatValue();
+            var fogEnabledConfig = RemoteController.MadboxSheet.FogConfig.FirstOrDefault(c => c.key.Equals("fogEnabled", StringComparison.InvariantCultureIgnoreCase));
+            var fogDensityConfig = RemoteController.MadboxSheet.FogConfig.FirstOrDefault(c => c.key.Equals("fogDensity", StringComparison.InvariantCultureIgnoreCase));
+
+            RenderSettings.fog = fogEnabledConfig?.BoolValue() ?? false;
+            RenderSettings.fogDensity = fogDensityConfig?.FloatValue() ?? 0f;
         }
     }
 }

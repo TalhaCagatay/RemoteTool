@@ -20,8 +20,11 @@ namespace Samples.Player.Config
         {
             ControllerHandler.GetController<IRemoteController>().RemoteUpdated += s =>
             {
-                ConfigHandler.GetMovementConfig<RunningMovementConfig>().Speed = RemoteController.MadboxSheet
-                    .MovementConfig.First(c => c.type.Equals("run", StringComparison.InvariantCultureIgnoreCase)).speed;
+                var runMovementConfig = RemoteController.MadboxSheet.MovementConfig
+                    .FirstOrDefault(c => c.type.Equals("Run", StringComparison.InvariantCultureIgnoreCase));
+
+                ConfigHandler.GetMovementConfig<RunningMovementConfig>().Speed =
+                    runMovementConfig?.speed ?? 3;
             };
         }
     }

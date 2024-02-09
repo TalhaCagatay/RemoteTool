@@ -17,17 +17,23 @@ namespace Samples.Remote.DTO
         
         public float FloatValue()
         {
-            return float.Parse(value.ToString());
+            float val = default;
+            float.TryParse(value.ToString(), out val);
+            return val;
         }
 
         public bool BoolValue()
         {
-            return bool.Parse(value.ToString());
+            bool val = default;
+            bool.TryParse(value.ToString(), out val);
+            return val;
         }
 
         public int IntValue()
         {
-            return int.Parse(value.ToString());
+            int val = default;
+            int.TryParse(value.ToString(), out val);
+            return val;
         }
 
         public string StringValue()
