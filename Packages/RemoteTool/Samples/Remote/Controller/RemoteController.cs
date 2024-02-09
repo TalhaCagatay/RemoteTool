@@ -42,7 +42,7 @@ namespace Samples.Remote.Controller
             Repeater.RepeatTask(async () =>
             {
                 await FetchAndUpdateRemote();
-            },5, _cancellationTokenSource.Token);
+            },3, _cancellationTokenSource.Token);
             Application.quitting += OnQuit;
 
             Debug.Log($"<color=green>{GetType().Name} Initialized</color>");
